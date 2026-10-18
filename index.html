@@ -72,15 +72,27 @@
       .content main { order: 3; }
       .content header .wrap, .content main.wrap { padding-left: 20px; padding-right: 20px; }
     }
+    /* top bar */
+    .topnav { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid var(--line); }
+    .topnav .wrap { display: flex; gap: 6px; padding-top: 8px; padding-bottom: 8px; max-width: 900px; margin: 0; padding-left: 38px; padding-right: 44px; }
+    .topnav a { color: var(--ink); font-weight: bold; text-decoration: none; padding: 6px 12px; border-radius: 6px; font-size: 0.95rem; }
+    .topnav a:hover { background: var(--ground); }
+    .topnav a.active { background: #DDE6F2; color: var(--banner); }
+    section, .card { scroll-margin-top: 70px; }
+    .side .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 0 10px 8px; }
+    .side nav a.sub { padding-left: 10px; }
+    @media (max-width: 800px) {
+      .side { display: none; }
+      .topnav { order: 2; }
+      .topnav .wrap { padding-left: 14px; padding-right: 14px; }
+    }
   </style>
 </head>
 <body>
   <div class="layout">
   <aside class="side">
     <nav>
-      <a class="top" href="#framework">Framework</a>
-      <a class="top" href="#focus">Focus areas</a>
-      <a class="top" href="#projects">Projects</a>
+      <div class="label">Projects</div>
       <a class="sub" href="#p-environmental-exposure-and-independent-l">California Exposure and Independent Living</a>
       <a class="sub" href="#p-exposure-lens-singapore">Exposure Lens Singapore</a>
       <a class="sub" href="#p-interactive-story-map">Interactive Story Map</a>
@@ -101,6 +113,13 @@
       <p class="lede">Using spatial statistics, public health surveillance data, and interactive tools to understand where health risks concentrate and how the places people live shape their health.</p>
     </div>
   </header>
+  <nav class="topnav">
+    <div class="wrap">
+      <a href="#framework">Framework</a>
+      <a href="#focus">Focus areas</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </nav>
 
   <main class="wrap">
     <section id="framework">
@@ -211,12 +230,14 @@
 <script>
   // highlight the sidebar link for the section in view
   (function(){
-    var links=[].slice.call(document.querySelectorAll('.side nav a'));
+    var links=[].slice.call(document.querySelectorAll('.side nav a, .topnav a'));
     var targets=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
     function update(){
-      var current=0;
-      targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top < 120) current=i; });
-      links.forEach(function(a,i){ a.classList.toggle('active', i===current); });
+      ['.topnav a','.side nav a'].forEach(function(sel){
+        var ls=[].slice.call(document.querySelectorAll(sel)), cur=-1;
+        ls.forEach(function(a,i){ var t=document.querySelector(a.getAttribute('href')); if(t && t.getBoundingClientRect().top < 140) cur=i; });
+        ls.forEach(function(a,i){ a.classList.toggle('active', i===cur); });
+      });
     }
     window.addEventListener('scroll',update,{passive:true}); update();
   })();
