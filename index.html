@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spatial Health Informatics</title>
+  <style>
+    :root { --ink: #1f2933; --muted: #5f6b76; --line: #dfe3e8; --accent: #1f5c99; --soft: #eef3f8; --card: #f7f9fb; --bg: #ffffff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+    header { background: var(--soft); border-bottom: 1px solid var(--line); }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    header .wrap { padding-top: 56px; padding-bottom: 40px; }
+    h1 { font-size: 2.2rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+    .lede { font-size: 1.12rem; color: var(--ink); margin: 0; max-width: 720px; }
+    section { padding: 36px 0 8px; }
+    h2 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .area { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+    .area h3 { margin: 0 0 6px; font-size: 1.02rem; color: var(--accent); }
+    .area p { margin: 0; font-size: 0.95rem; color: var(--ink); }
+    .card { display: block; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; }
+    a.card:hover { border-color: var(--accent); }
+    .card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--accent); }
+    .card p { margin: 0; }
+    .meta { margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
+    .links { margin-top: 10px; font-size: 0.92rem; }
+    .links a { color: var(--accent); margin-right: 16px; }
+    .status { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; margin-left: 8px; vertical-align: middle; }
+    footer { margin: 40px 0 0; padding: 18px 0 48px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Spatial Health Informatics</h1>
+      <p class="lede">Using spatial statistics, public health surveillance data, and interactive tools to understand where health risks concentrate and how the places people live shape their health.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Focus areas</h2>
+      <div class="areas">
+        <div class="area">
+          <h3>Spatial statistics</h3>
+          <p>Clustering and hotspot methods such as Moran's I, LISA, and Getis-Ord Gi* to find where outcomes concentrate.</p>
+        </div>
+        <div class="area">
+          <h3>Housing and health equity</h3>
+          <p>How housing conditions, environmental burden, and social vulnerability relate to health across neighborhoods.</p>
+        </div>
+        <div class="area">
+          <h3>Surveillance and decision support</h3>
+          <p>Turning public health surveillance data into maps and dashboards that support decisions.</p>
+        </div>
+        <div class="area">
+          <h3>Interactive visualization</h3>
+          <p>Web-based charts and maps built in Python and ArcGIS so findings can be explored, not only read.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="card">
+        <h3>Housing, Environment, and Health Across Three Cities <span class="status">In development</span></h3>
+        <p>A comparison of Richmond, California; Cambridge, United Kingdom; and Singapore using open housing, environmental, and health data, applying the same spatial and interactive methods across very different urban settings.</p>
+        <div class="meta">Spatial statistics · Housing indicators · Comparative urban health</div>
+      </div>
+
+      <div class="card">
+        <h3>Asthma and Environmental Justice in Contra Costa County</h3>
+        <p>Spatial analysis of asthma prevalence against PM2.5, NO2, and the CDC/ATSDR Environmental Justice Index. Asthma showed significant spatial clustering (global Moran's I = 0.31, p &lt; 0.01), with high-high clusters along the Richmond and Pittsburg corridor.</p>
+        <div class="meta">Poisson regression · Global Moran's I · LISA cluster analysis</div>
+      </div>
+
+      <div class="card">
+        <h3>Syndromic Surveillance Story Map and Dashboard</h3>
+        <p>An ArcGIS story map and dashboard presented at the CSTE Annual Conference, showing how surveillance data can be shared through interactive maps.</p>
+        <div class="links">
+          <a href="https://arcg.is/0OGaHm1">Story map</a>
+          <a href="https://www.arcgis.com/apps/dashboards/ec80ff3422da41b1a41630fab5172dbc">Dashboard</a>
+        </div>
+        <div class="meta">ArcGIS StoryMaps · ArcGIS Dashboards</div>
+      </div>
+
+      <a class="card" href="brain-volume-sankey/">
+        <h3>Brain Volume Composition</h3>
+        <p>An interactive Sankey diagram showing how intracranial volume divides across five levels of brain regions, built from MRICloud volumetric data. It demonstrates turning hierarchical data into an explorable web graphic.</p>
+        <div class="meta">Python · Plotly · Hierarchical data</div>
+      </a>
+    </section>
+
+    <footer>Genie Tang</footer>
+  </main>
+</body>
+</html>
