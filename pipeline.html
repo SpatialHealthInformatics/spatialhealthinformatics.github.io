@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Automated Surveillance-to-Decision Pipeline</title><style>
+:root{--ink:#14212B;--muted:#4B5963;--line:#D9E0DC;--ground:#F4F6F5;--banner:#1D3F73;--c:#B5485A}
+*{box-sizing:border-box}body{margin:0;font-family:Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}header{background:var(--banner);color:#fff}header .wrap{padding:40px 20px 32px}
+header a{color:#cfe0f5;font-size:.9rem;text-decoration:none}h1{font-size:1.9rem;margin:8px 0 6px}.lede{margin:0;color:#E6EDF5}
+section{padding:28px 0 4px}h2{font-size:.95rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin:0 0 14px}
+.abs{background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.abs .venue{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.abs h3{margin:4px 0 10px;font-size:1.12rem}
+.abs p{margin:0 0 8px}.abs b{color:var(--ink)}figure{margin:0}figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:8px}.btn{display:inline-block;margin:10px 10px 0 0;background:var(--c);color:#fff;font-weight:bold;font-size:.92rem;padding:8px 16px;border-radius:6px;text-decoration:none}
+.btn:hover{filter:brightness(.88)}footer{margin:40px 0 0;padding:18px 0 48px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+</style></head>
+<body><header><div class="wrap"><a href="./">← Spatial Health Informatics</a><h1>Automated Surveillance-to-Decision Pipeline</h1><p class="lede">A modular pipeline that turns surveillance data into alerts and reports on a schedule, with no manual steps.</p></div></header>
+<main class="wrap"><section><h2>How it works</h2>
+<figure><img src="pipeline.png" alt="Five-step pipeline: scheduled analysis, data retrieval, analysis and report generation, secure upload, automated delivery"><figcaption>The five steps, shown here as applied to Japan's national influenza surveillance data.</figcaption></figure>
+<p>A scheduled R script retrieves the latest surveillance data, applies an alert rule, and writes two outputs: an HTML report for people and a JSON summary for machines. The files are uploaded securely through the Microsoft Graph API, and Power Automate reads the summary and sends a notification automatically.</p>
+<p>Each step can be replaced without rebuilding the rest. The same structure runs in daily production for a public health surveillance program, and it was adapted as a prototype for Japan's national influenza surveillance data, where only the retrieval and analysis steps changed.</p>
+<a class="btn" href="influenza-alert-report.html" target="_blank" rel="noopener">See an example report ↗</a></section><footer>Genie Tang · Contact: noriko [at] berkeley [dot] edu</footer></main></body></html>
