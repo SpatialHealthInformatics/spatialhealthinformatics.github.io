@@ -27,6 +27,9 @@
     .links { margin-top: 10px; font-size: 0.92rem; }
     .links a { color: var(--accent); margin-right: 16px; }
     .status { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; margin-left: 8px; vertical-align: middle; }
+    .framework { margin: 0; }
+    .framework img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; }
+    .framework figcaption { margin-top: 10px; font-size: 0.92rem; color: var(--muted); }
     footer { margin: 40px 0 0; padding: 18px 0 48px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); }
   </style>
 </head>
@@ -39,6 +42,13 @@
   </header>
 
   <main class="wrap">
+    <section>
+      <h2>Framework</h2>
+      <figure class="framework">
+        <img src="framework.jpg" alt="Spatial decision intelligence framework: story map, dashboard, design-relevant predictive modeling, and architectural design simulator, informing buildings, streets and mobility, land use and zoning, housing and ventilation, and green and blue infrastructure">
+        <figcaption>A spatial decision intelligence framework for health equity. It moves from historical and current evidence to future scenarios through four components: a story map for place-based context, a dashboard for exploring current patterns, predictive modeling of near-term risk, and an architectural design simulator for comparing design alternatives.</figcaption>
+      </figure>
+    </section>
     <section>
       <h2>Focus areas</h2>
       <div class="areas">
@@ -64,11 +74,35 @@
     <section>
       <h2>Projects</h2>
 
+      <a class="card" href="california-pm25-need.html" target="_blank" rel="noopener">
+        <h3>Environmental Exposure and Independent Living Need in California</h3>
+        <p>A statewide PM2.5 exposure surface built by ordinary kriging from 127 EPA monitors, crossed with a census tract need index combining disability, living alone, vehicle access, and English proficiency. The analysis identifies 1,112 of 9,048 California tracts where predicted exposure and need are both high.</p>
+        <div class="meta">Ordinary kriging · Cross-validation · Composite need index · EPA and ACS data</div>
+      </a>
+
+      <a class="card" href="singapore-exposure-appendix.html" target="_blank" rel="noopener">
+        <h3>Exposure Lens Singapore</h3>
+        <p>A reproducible spatial analysis of air temperature and PM2.5 readings from Singapore's open government data, testing spatial autocorrelation and local indicators of spatial association, with a clear statement of which methods are valid at this scale.</p>
+        <div class="meta">Global Moran's I · LISA · Open data (data.gov.sg)</div>
+      </a>
+
 
       <div class="card">
         <h3>Asthma and Environmental Justice in Contra Costa County</h3>
         <p>Spatial analysis of asthma prevalence against PM2.5, NO2, and the CDC/ATSDR Environmental Justice Index. Asthma showed significant spatial clustering (global Moran's I = 0.31, p &lt; 0.01), with high-high clusters along the Richmond and Pittsburg corridor.</p>
         <div class="meta">Poisson regression · Global Moran's I · LISA cluster analysis</div>
+      </div>
+
+      <div class="card">
+        <h3>Automated Surveillance-to-Decision Pipeline</h3>
+        <p>A modular pipeline that runs on a schedule, retrieves surveillance data, applies a tiered alert framework, writes the report, and delivers it with an automatic notification, with no manual steps. It is in daily production use for a public health surveillance program, and the same five-step structure was adapted as a prototype for Japan's national influenza surveillance data.</p>
+        <div class="meta">R · API data retrieval · Alert rules engine · Automated reporting</div>
+      </div>
+
+      <div class="card">
+        <h3>Influenza Surveillance Research in Japan</h3>
+        <p>Two conference abstracts with clinicians in Japan. One compares near real-time electronic health record data on pediatric influenza with national sentinel surveillance. The other evaluates an automated decision support framework for Japan's weekly influenza data: across seven seasons, its first EARS C2 alert came before the epidemic threshold every time, by a median of two weeks.</p>
+        <div class="meta">Electronic health records · EARS C2 detection · Decision support</div>
       </div>
 
       <div class="card">
@@ -84,10 +118,17 @@
         <h3>Public Health Dashboard</h3>
         <p>An ArcGIS dashboard that brings public health indicators together in interactive maps and charts for monitoring and decision support.</p>
         <div class="links">
-          <a href="https://www.arcgis.com/apps/dashboards/ec80ff3422da41b1a41630fab5172dbc" target="_blank" rel="noopener">Open dashboard</a>
+          <a href="https://gisanddata.maps.arcgis.com/apps/dashboards/a3d9717aa57c45a6a5284f3268d61554" target="_blank" rel="noopener">Open dashboard</a>
         </div>
         <div class="meta">Access is restricted. Please contact me for access.</div>
         <div class="meta">ArcGIS Dashboards · Decision support</div>
+      </div>
+
+      <div class="card">
+        <h3>Recommendation Progress Reporting Prototype</h3>
+        <p>An interactive quarterly report that turns an advisory committee's recommendation tracker into status summaries, timelines, and a campus map, so members can see progress and next steps at a glance.</p>
+        <div class="meta">Available on request</div>
+        <div class="meta">Interactive reporting · Data visualization · Decision support</div>
       </div>
 
       <a class="card" href="brain-volume-sankey/" target="_blank" rel="noopener">
