@@ -106,7 +106,7 @@
       <a class="sub" href="#p-public-health-dashboard" style="--dot:#6CC5CF">Public Health Dashboard</a>
       <a class="sub" href="#p-exposure-lens-singapore" style="--dot:#7FB0E3">Exposure Lens Singapore</a>
       <a class="sub" href="#p-brain-volume-composition" style="--dot:#7CC79B">Brain Volume Composition</a>
-      <a class="sub" href="#p-asthma-and-environmental-justice-in-cont" style="--dot:#9FB3CC">Asthma and Environmental Justice</a>
+      <a class="sub" href="#p-asthma-and-environmental-justice-in-cont" style="--dot:#F2C75C">Asthma and Environmental Justice</a>
       <a class="sub" href="#p-housing-environment-and-health-across-th" style="--dot:#9FB3CC">Three Cities Comparison</a>
     </nav>
     <div class="contact">Genie Tang<br>noriko [at] berkeley [dot] edu</div>
@@ -132,6 +132,8 @@
       <figure class="framework">
         <img src="framework.jpg" alt="Spatial decision intelligence framework: story map, dashboard, design-relevant predictive modeling, and architectural design simulator, informing buildings, streets and mobility, land use and zoning, housing and ventilation, and green and blue infrastructure">
         <figcaption>A spatial decision intelligence framework for health equity. It moves from historical and current evidence to future scenarios through four components: a story map for place-based context, a dashboard for exploring current patterns, predictive modeling of near-term risk, and an architectural design simulator for comparing design alternatives.</figcaption>
+        <p style="margin:14px 0 0 0;"><span style="color:var(--muted);font-size:0.95rem;">The dashboard component, built for the Richmond case study:</span><br>
+        <a class="btn" href="https://richmond-explorer.streamlit.app" target="_blank" rel="noopener">Open the Richmond Spatial Decision Intelligence Explorer ↗</a></p>
       </figure>
     </section>
     <section id="focus">
@@ -216,15 +218,16 @@
         <span class="btn">Open project ↗</span>
       </a>
 
-      <div class="card" id="p-asthma-and-environmental-justice-in-cont">
+      <a class="card linked c-yellow" href="https://richmond-explorer.streamlit.app" target="_blank" rel="noopener" id="p-asthma-and-environmental-justice-in-cont">
         <h3>Asthma and Environmental Justice in Contra Costa County</h3>
-        <p>Spatial analysis of asthma prevalence against PM2.5, NO2, and the CDC/ATSDR Environmental Justice Index. Asthma showed significant spatial clustering (global Moran's I = 0.31, p &lt; 0.01), with high-high clusters along the Richmond and Pittsburg corridor.</p>
-        <div class="meta">Poisson regression · Global Moran's I · LISA cluster analysis</div>
-      </div>
+        <p>Spatial analysis of asthma prevalence against PM2.5, NO2, and the CDC/ATSDR Environmental Justice Index. Asthma showed significant spatial clustering (global Moran's I = 0.31, p &lt; 0.01), with high-high clusters along the Richmond and Pittsburg corridor. The interactive explorer rebuilds the analysis on the 2024 index (global Moran's I = 0.69, queen contiguity, 999 permutations) across the 241 county tracts, with the City of Richmond outlined: exposure and burden layers, LISA cluster maps, a bivariate map, and priority tracts where exposure and burden coincide.</p>
+        <div class="meta">Python · Streamlit · PySAL · Global Moran's I · LISA cluster analysis</div>
+        <span class="btn">Open the explorer ↗</span>
+      </a>
 
       <div class="card" id="p-housing-environment-and-health-across-th">
         <h3>Housing, Environment, and Health Across Three Cities <span class="status">In development</span></h3>
-        <p>A comparison of Richmond, California; Cambridge, United Kingdom; and Singapore using open housing, environmental, and health data, applying the same spatial and interactive methods across very different urban settings.</p>
+        <p>A comparison of Richmond, California; Cambridge, United Kingdom; and Singapore using open housing, environmental, and health data, applying the same spatial and interactive methods across very different urban settings. The Richmond module is live in the explorer above; the Cambridge and Singapore modules follow.</p>
         <div class="meta">Spatial statistics · Housing indicators · Comparative urban health</div>
       </div>
     </section>
