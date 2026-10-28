@@ -8,7 +8,7 @@
 <style>
     :root { --ink:#14212B; --muted:#4B5963; --line:#D9E0DC; --soft:#ECF1EE; --paper:#FFFFFF; --ground:#F4F6F5; --accent:#1F5A73; --accent-dark:#174559; --accent-soft:#DDEBF1; --banner:#1D3F73; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Century Gothic", CenturyGothic, AppleGothic, "Didact Gothic", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    body { margin: 0; font-family: "Century Gothic", CenturyGothic, "Didact Gothic", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
     .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
     header { background: var(--banner); color: #fff; }
     header .wrap { padding-top: 32px; padding-bottom: 14px; }
@@ -35,7 +35,7 @@
     a.btn:hover { background: var(--accent-dark); }
     .meta { margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
     .note { margin-top: 8px; font-size: 0.85rem; color: var(--muted); font-style: italic; }
-    .num { display:inline-block; min-width:2.1em; font-weight:700; color:var(--c, var(--accent)); opacity:0.5; font-variant-numeric:tabular-nums; }
+    .num { display:inline-block; min-width:2.6em; font-weight:700; color:var(--c, var(--accent)); opacity:0.5; font-variant-numeric:tabular-nums; }
     .snum { display:inline-block; width:2.1em; opacity:0.55; font-variant-numeric:tabular-nums; }
     .status { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border: 1px solid #C5CDC8; background: #fff; border-radius: 999px; padding: 1px 9px; margin-left: 8px; vertical-align: middle; }
     footer { margin: 40px 0 0; padding: 18px 0 48px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); }
@@ -91,7 +91,15 @@
       .topnav .wrap { padding-left: 8px; padding-right: 14px; }
     }
     a:focus-visible { outline: 3px solid #F5B800; outline-offset: 2px; }
-  </style>
+    .card.linked.c-lav { background:#FFF8F7; border-color:#F0CBC8; border-left-color:#A33E50; }
+    .c-lav h3 { --c:#A33E50; }
+    .card.linked.c-lav .btn { background:#16707E; color:#fff; }
+    a.card.linked.c-lav:hover .btn { background:#16707E; filter:brightness(0.88); }
+    .card.subcard { margin-left:40px; }
+    .side nav a.sub2 { padding-left:40px; font-size:0.82rem; }
+    .side nav a.sub2::before { left:27px; }
+    @media (max-width: 800px) { .card.subcard { margin-left:18px; } }
+</style>
 </head>
 <body>
   <div class="layout">
@@ -105,6 +113,7 @@
       <a class="sub" href="#p-environmental-exposure-and-independent-l" style="--dot:#F2C75C"><span class="snum">03</span>California Exposure and Independent Living</a>
       <a class="sub" href="#p-automated-surveillance-to-decision-pipel" style="--dot:#7CC79B"><span class="snum">04</span>Automated Surveillance-to-Decision Pipeline</a>
       <a class="sub" href="#p-influenza-surveillance-research-in-japan" style="--dot:#EE9AA6"><span class="snum">05</span>Influenza Surveillance Research in Japan</a>
+      <a class="sub sub2" href="#p-japan-influenza-explorer" style="--dot:#EE9AA6"><span class="snum">05a</span>Japan Influenza Explorer</a>
       <a class="sub" href="#p-interactive-story-map" style="--dot:#7FB0E3"><span class="snum">06</span>Interactive Story Map</a>
       <a class="sub" href="#p-public-health-dashboard" style="--dot:#A98CDE"><span class="snum">07</span>Public Health Dashboard</a>
       <a class="sub" href="#p-disability-inclusion-recommendation-prog" style="--dot:#6CC5CF"><span class="snum">08</span>Disability Inclusion Progress Report</a>
@@ -197,22 +206,28 @@
         <p>Two conference abstracts with clinicians in Japan. One compares near real-time electronic health record data on pediatric influenza with national sentinel surveillance. The other evaluates an automated decision support framework for Japan's weekly influenza data: across seven seasons, its first EARS C2 alert came before the epidemic threshold every time, by a median of two weeks.</p>
         <div class="meta">Electronic health records · EARS C2 detection · Decision support</div>
         <a class="btn" href="influenza-research.html" target="_blank" rel="noopener">Open project ↗</a>
-        <a class="btn" href="https://japan-influenza-explorer.streamlit.app" target="_blank" rel="noopener">Open the explorer ↗</a>
       </div>
+
+      <a class="card linked c-lav subcard" href="https://japan-influenza-explorer.streamlit.app" target="_blank" rel="noopener" id="p-japan-influenza-explorer">
+        <h3><span class="num">05a</span>Japan Influenza Surveillance Explorer</h3>
+        <p>Weekly influenza reports per sentinel site for all 47 prefectures, with EARS C2 alerts, lead times and false alarms, maps of the Kanto and Kansai areas and all of Japan, and spatial clustering. Public IDWR data only.</p>
+        <div class="meta">Python · Streamlit · Plotly · PySAL · EARS C2</div>
+        <span class="btn">Open the explorer ↗</span>
+      </a>
 
       <div class="card linked c-blue" id="p-interactive-story-map">
         <h3><span class="num">06</span>Interactive Story Map</h3>
         <p>An ArcGIS story map that combines maps and narrative to present public health data in a form people can explore.</p>
-        <a class="btn" href="https://arcg.is/0OGaHm1" target="_blank" rel="noopener">Open story map ↗</a>
         <div class="meta">ArcGIS StoryMaps · Spatial data · Public health communication</div>
+        <a class="btn" href="https://arcg.is/0OGaHm1" target="_blank" rel="noopener">Open story map ↗</a>
       </div>
 
       <div class="card linked c-purple" id="p-public-health-dashboard">
         <h3><span class="num">07</span>Public Health Dashboard</h3>
         <p>An ArcGIS dashboard that brings public health indicators together in interactive maps and charts for monitoring and decision support.</p>
-        <a class="btn" href="https://gisanddata.maps.arcgis.com/apps/dashboards/a3d9717aa57c45a6a5284f3268d61554" target="_blank" rel="noopener">Open dashboard ↗</a>
         <div class="note">Access is restricted. Please contact me for access.</div>
         <div class="meta">ArcGIS Dashboards · Decision support</div>
+        <a class="btn" href="https://gisanddata.maps.arcgis.com/apps/dashboards/a3d9717aa57c45a6a5284f3268d61554" target="_blank" rel="noopener">Open dashboard ↗</a>
       </div>
 
       <a class="card linked c-teal" href="disability-inclusion-report.html" target="_blank" rel="noopener" id="p-disability-inclusion-recommendation-prog">
