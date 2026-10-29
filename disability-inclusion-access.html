@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Disability Inclusion Recommendation Progress Report: Members Only</title>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14212B;--muted:#4B5963;--line:#D9E0DC;--ground:#F4F6F5;--banner:#1D3F73;--red:#B3261E;--redsoft:#FCEDEC;--teal:#16707E}
+*{box-sizing:border-box}body{margin:0;font-family:"Century Gothic",CenturyGothic,"Didact Gothic",sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}header{background:var(--banner);color:#fff}header .wrap{padding:36px 20px 28px}
+header a{color:#cfe0f5;font-size:.9rem;text-decoration:none}h1{font-size:1.7rem;margin:8px 0 6px}.lede{margin:0;color:#E6EDF5}
+.notice{margin:28px 0 18px;padding:16px 20px;background:var(--redsoft);border:1px solid #F0C4C1;border-left:6px solid var(--red);border-radius:10px}
+.notice strong{display:block;color:var(--red);font-size:1.15rem;margin-bottom:4px}
+form{background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:0 0 20px}
+label.check{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+input[type=checkbox]{width:22px;height:22px;margin-top:3px;flex:none}
+.btn{display:inline-block;margin-top:16px;background:var(--teal);color:#fff;font-weight:bold;font-size:.95rem;padding:10px 18px;border-radius:6px;text-decoration:none;border:0;font-family:inherit;cursor:pointer}
+.btn[aria-disabled=true]{background:#9AA8AE;cursor:not-allowed;pointer-events:none}
+.btn:focus-visible,input:focus-visible{outline:3px solid #1D3F73;outline-offset:2px}
+.small{font-size:.9rem;color:var(--muted)}footer{margin:28px 0 0;padding:18px 0 48px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+</style></head>
+<body>
+<header><div class="wrap"><a href="./">← Spatial Health Informatics</a><h1>Disability Inclusion Recommendation Progress Report</h1><p class="lede">A prototype quarterly report for an advisory committee's recommendation tracker.</p></div></header>
+<main class="wrap">
+<div class="notice" role="note"><strong>Restricted: members only. Not for public sharing.</strong>This report is for members of the Disability Inclusion Advisory Committee. Please don't share the link or its contents outside the committee.</div>
+<form id="gate" onsubmit="return false">
+<label class="check"><input type="checkbox" id="ok"><span>I am a member of the committee, and I will not share this report outside the committee.</span></label>
+<a class="btn" id="go" href="disability-inclusion-report.html" aria-disabled="true">Open the report</a>
+<p class="small" style="margin:14px 0 0">The button turns on after you check the box above. This page is a notice, not a password. It does not collect or store any information.</p>
+</form>
+<p>Not a committee member and would like access? Please contact Genie Tang through the committee.</p>
+</main>
+<footer><div class="wrap">Spatial Health Informatics</div></footer>
+<script>
+var ok=document.getElementById('ok'),go=document.getElementById('go');
+ok.addEventListener('change',function(){go.setAttribute('aria-disabled',ok.checked?'false':'true');});
+go.addEventListener('click',function(e){if(!ok.checked){e.preventDefault();}});
+</script>
+</body></html>
