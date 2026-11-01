@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version: v3 (2026-11-01). v3: language switch at the top of the sidebar on computers (top bar on phones). v2: site version shown in the footer. v1: English / 日本語 switch in the top bar; both languages are in this one file. -->
+<!-- Version: v4 (2026-11-01). v4: language switch both at the top of the sidebar and at the right of the top bar. v3: switch at the top of the sidebar. v2: site version shown in the footer. v1: English / 日本語 switch in the top bar; both languages are in this one file. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -110,8 +110,7 @@
     .topnav a, .langswitch button { white-space: nowrap; }
     .side-lang { padding: 0 10px 14px; }
     .side .langswitch { margin-left: 0; }
-    /* Computers: the switch sits at the top of the sidebar. Phones (no sidebar): it stays in the top bar. */
-    @media (min-width: 801px) { .topnav .langswitch { display: none; } }
+    /* The switch is in two places: the top of the sidebar (computers) and the right of the top bar. */
     @media (max-width: 800px) {
       .topnav .wrap { flex-wrap: wrap; row-gap: 6px; }
       .topnav a { padding: 6px 8px; font-size: 0.9rem; }
@@ -311,7 +310,7 @@
       </div>
     </section>
 
-    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span> · <span class="en">Site</span><span class="ja" lang="ja">サイト</span> v3</footer>
+    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span> · <span class="en">Site</span><span class="ja" lang="ja">サイト</span> v4</footer>
   </main>
   </div>
 </div>
