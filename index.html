@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version: v1 (2026-11-01). English / 日本語 switch in the top bar; both languages are in this one file. -->
+<!-- Version: v3 (2026-11-01). v3: language switch at the top of the sidebar on computers (top bar on phones). v2: site version shown in the footer. v1: English / 日本語 switch in the top bar; both languages are in this one file. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -108,6 +108,10 @@
     .langswitch button:hover { background: rgba(255,255,255,.12); }
     .langswitch button[aria-pressed="true"] { background: #c9f7a5; color: #1f3d0c; border-color: #7fd44c; }
     .topnav a, .langswitch button { white-space: nowrap; }
+    .side-lang { padding: 0 10px 14px; }
+    .side .langswitch { margin-left: 0; }
+    /* Computers: the switch sits at the top of the sidebar. Phones (no sidebar): it stays in the top bar. */
+    @media (min-width: 801px) { .topnav .langswitch { display: none; } }
     @media (max-width: 800px) {
       .topnav .wrap { flex-wrap: wrap; row-gap: 6px; }
       .topnav a { padding: 6px 8px; font-size: 0.9rem; }
@@ -134,6 +138,12 @@
 <body>
   <div class="layout">
   <aside class="side">
+    <div class="side-lang">
+      <span class="langswitch" role="group" aria-label="Language / 言語">
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="ja" lang="ja">日本語</button>
+      </span>
+    </div>
     <nav>
       <a class="top" href="#framework"><span class="en">Framework</span><span class="ja" lang="ja">フレームワーク</span></a>
       <a class="top" href="#focus"><span class="en">Focus areas</span><span class="ja" lang="ja">重点分野</span></a>
@@ -301,7 +311,7 @@
       </div>
     </section>
 
-    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span></footer>
+    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span> · <span class="en">Site</span><span class="ja" lang="ja">サイト</span> v3</footer>
   </main>
   </div>
 </div>
