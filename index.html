@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- Version: v4 (2026-11-01). v4: language switch both at the top of the sidebar and at the right of the top bar. v3: switch at the top of the sidebar. v2: site version shown in the footer. v1: English / 日本語 switch in the top bar; both languages are in this one file. -->
-<html lang="en">
+<!-- Version: v5 (2026-11-01). v5: the language choice lasts only for the visit (English again next time, unless the browser is Japanese); no Google Translate prompt. v4: language switch both at the top of the sidebar and at the right of the top bar. v3: switch at the top of the sidebar. v2: site version shown in the footer. v1: English / 日本語 switch in the top bar; both languages are in this one file. -->
+<html lang="en" translate="no">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -118,14 +118,16 @@
     }
 </style>
 <script>
-  // Pick the language before the page draws: ?lang=ja or ?lang=en, then the visitor's last choice,
+  // Pick the language before the page draws: ?lang=ja or ?lang=en, then the choice made in this visit
+  // (kept only until the tab is closed),
   // then the browser language (Japanese browsers open in Japanese).
   (function () {
     var lang = "en";
     try {
       var q = new URLSearchParams(location.search).get("lang");
       var saved = null;
-      try { saved = localStorage.getItem("shi-lang"); } catch (e) {}
+      try { localStorage.removeItem("shi-lang"); } catch (e) {}  // older versions saved the choice for good
+      try { saved = sessionStorage.getItem("shi-lang"); } catch (e) {}
       if (q === "ja" || q === "en") lang = q;
       else if (saved === "ja" || saved === "en") lang = saved;
       else if ((navigator.language || "").toLowerCase().indexOf("ja") === 0) lang = "ja";
@@ -310,7 +312,7 @@
       </div>
     </section>
 
-    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span> · <span class="en">Site</span><span class="ja" lang="ja">サイト</span> v4</footer>
+    <footer><span class="en">Genie Tang · Contact: noriko [at] berkeley [dot] edu</span><span class="ja" lang="ja">Genie Tang · 連絡先：noriko [at] berkeley [dot] edu</span> · <span class="en">Site</span><span class="ja" lang="ja">サイト</span> v5</footer>
   </main>
   </div>
 </div>
@@ -356,7 +358,7 @@
     [].slice.call(document.querySelectorAll(".langswitch button")).forEach(function (b) {
       b.addEventListener("click", function () {
         var lang = b.getAttribute("data-lang");
-        try { localStorage.setItem("shi-lang", lang); } catch (e) {}
+        try { sessionStorage.setItem("shi-lang", lang); } catch (e) {}
         setLang(lang);
       });
     });
